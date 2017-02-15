@@ -37,6 +37,7 @@
     "action:autopreview": "npm run action:config && npm run action:preview"
   },
   "dependencies": {
-    "@manekinekko/google-actions-server": "dblock/google-actions-server#tests"
+    "@manekinekko/google-actions-server": "dblock/google-actions-server#tests",
+    "actions-on-google-nodejs": "actions-on-google/actions-on-google-nodejs#81c287f5"
   }
 }
