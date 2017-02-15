@@ -10,7 +10,7 @@
       "intent": "assistant.intent.action.MAIN"
     },
     "httpExecution": {
-      "url": ""
+      "url": "https://dc42588b.ngrok.io"
     }
   }]
 }
