@@ -1,0 +1,42 @@
+{
+  "name": "Biesenbach",
+  "description": "Artsy for Google Home",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "index.js",
+  "author": {
+    "name": "Daniel Doubrovkine",
+    "email": "db@artsy.net"
+  },
+  "engines": {
+    "node": "> 5"
+  },
+  "homepage": "https://github.com/artsy/biesenbach",
+  "bugs": "https://github.com/artsy/biesenbach/issues",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:artsy/biesenbach.git"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
+  },
+  "scripts": {
+    "start": "npm run build && npm run server",
+    "server": "nodemon dist/action.js",
+    "ngrok": "ngrok http 8080",
+    "test": "npm run build && mocha --timeout 5000 dist/test",
+    "build": "babel lib -d dist && babel test -d dist/test",
+    "build:watch": "npm run build -- -w",
+    "action:simulate": "gactions simulate",
+    "action:preview": "node ./scripts/preview_action.js",
+    "action:config": "node ./scripts/update_action_config.js -f",
+    "action:autopreview": "npm run action:config && npm run action:preview"
+  },
+  "dependencies": {
+    "@manekinekko/google-actions-server": "dblock/google-actions-server#tests"
+  }
+}
