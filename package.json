@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "npm run build && npm run server",
-    "server": "nodemon dist/action.js",
+    "server": "ENV=development nodemon dist/action.js",
     "ngrok": "ngrok http 8080",
     "test": "npm run build && ENV=test mocha --timeout 5000 dist/test",
     "build": "babel lib -d dist && babel test -d dist/test",

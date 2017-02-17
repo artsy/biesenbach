@@ -1,5 +1,9 @@
 ### Running Locally
 
+#### Introduction
+
+You might want to read up on [Conversation Actions](https://developers.google.com/actions/develop/conversation), first. The Artsy Google Home app is built on top of [google-actions-server](https://github.com/manekinekko/google-actions-server).
+
 #### Install the Google SDK
 
 Install the [Google SDK](https://developers.google.com/actions/develop/sdk/getting-started).
@@ -64,22 +68,52 @@ Press Ctrl+C to quit.
 
 #### Push Test App
 
+The `action.json` file will be updated with a local ngrok endpoint and you will be prompted to visit a URL in your browser and to copy-paste a code into the shell.
+
 ```
 $> npm run action:autopreview
 
+> Biesenbach@0.1.0 action:autopreview /Users/dblock/source/google/biesenbach/dblock
+> npm run action:config && npm run action:preview
+
+> Biesenbach@0.1.0 action:config /Users/dblock/source/google/biesenbach/dblock
+> node ./scripts/update_action_config.js -f
+
+GAS: set the new public_url to" https://5f28036b.ngrok.io "in your " /Users/dblock/source/google/biesenbach/dblock/action.json " file.
+
+> Biesenbach@0.1.0 action:preview /Users/dblock/source/google/biesenbach/dblock
+> node ./scripts/preview_action.js
+
 Pushing action 'artsy' for testing...
-'artsy' is now available for you until 2017-02-16 11:54AM EST (20 hours from now)
+Gactions needs access to your Google account. Please copy & paste the URL below into a web browser and follow the instructions there. Then copy and paste the authorization code from the browser back here.
+
+Visit this URL:
+ https://accounts.google.com/o/oauth2/auth?...
+
+Enter authorization code:
+ [paste your code here]
+
+'artsy' is now available for you until 2017-02-18 12:26PM EST (20 hours from now)
+Try 'gactions simulate', then 'talk to artsy', or use the Web Simulator at https://g.co/actionswebsim.
 ```
 
 #### Simulator
 
-You can run the simulator.
+Run a console simulator.
 
 ```
-$> npm action:simulate
+$> npm run action:simulate
+
+> Biesenbach@0.1.0 action:simulate /Users/dblock/source/google/biesenbach/dblock
+> gactions simulate
 
 User TTS (CTRL-C to stop):
+
 talk to artsy
 Action: Sure, here's artsy
 Welcome to Artsy!
+
+User TTS (CTRL-C to stop):
+who is andy warhol?
+Action: American artist Andy Warhol ...
 ```
