@@ -1,1 +1,2 @@
-import './lib/action';
+require('./dist/action');
+

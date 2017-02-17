@@ -3,3 +3,4 @@ node_modules
 creds.data
 npm-debug.log
 dist
+.env.production.json

@@ -26,16 +26,17 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "start": "npm run build && ARTSY_CLIENT_ID=8198312f86b95300946b ARTSY_CLIENT_SECRET=99ba69754592e7d4cce2bb319ece15b4 ARTSY_BASE_API_URL=https://stagingapi.artsy.net/api npm run server",
+    "start": "npm run build && npm run server",
     "server": "nodemon dist/action.js",
     "ngrok": "ngrok http 8080",
-    "test": "npm run build && ARTSY_CLIENT_ID=8198312f86b95300946b ARTSY_CLIENT_SECRET=99ba69754592e7d4cce2bb319ece15b4 ARTSY_BASE_API_URL=https://stagingapi.artsy.net/api mocha --timeout 5000 dist/test",
+    "test": "npm run build && ENV=test mocha --timeout 5000 dist/test",
     "build": "babel lib -d dist && babel test -d dist/test",
     "build:watch": "npm run build -- -w",
     "action:simulate": "gactions simulate",
-    "action:preview": "node ./scripts/preview_action.js",
+    "action:preview": "ENV=development node ./scripts/preview_action.js",
     "action:config": "node ./scripts/update_action_config.js -f",
-    "action:autopreview": "npm run action:config && npm run action:preview"
+    "action:autopreview": "npm run action:config && npm run action:preview",
+    "deploy": "npm run build && gactions deploy --action_package action.json --project biesenbach"
   },
   "dependencies": {
     "@manekinekko/google-actions-server": "dblock/google-actions-server#tests",
