@@ -24,6 +24,10 @@ This project is named after MoMa PS1 curator [Klaus Biesenbach](https://www.moma
 
 You might also want to check out the [Artsy Alexa App](https://github.com/artsy/elderfield).
 
+### Contributing
+
+We encourage you to contribute! See [CONTRIBUTING](CONTRIBUTING.md) for general guidelines and [DEV](DEV.md) for working with this Google Home app locally.
+
 ### License
 
 Copyright (c) 2017 Art.sy Inc.
