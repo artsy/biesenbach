@@ -10,9 +10,7 @@ Create a new project in [Google Cloud Platform Projects](https://console.cloud.g
 
 Enable project billing. See [Modify a project's billing settings](https://support.google.com/cloud/answer/6293499?hl=en) for help.
 
-#### Deploy Code
-
-Set current project.
+#### Set Current Project
 
 ```
 $> gcloud config set project biesenbach-one
@@ -20,7 +18,7 @@ $> gcloud config set project biesenbach-one
 Updated property [core/project].
 ```
 
-Create a deployment.
+#### Create a Deployment
 
 ```
 $> gcloud deployment-manager deployments create production --config vm.yaml
@@ -33,7 +31,7 @@ NAME                TYPE                 STATE      ERRORS  INTENT
 vm-biensenbach-one  compute.v1.instance  COMPLETED  []
 ```
 
-Check your deployment
+Check your deployment.
 
 ```
 $> gcloud deployment-manager deployments describe production
@@ -56,7 +54,11 @@ NAME                TYPE                 STATE      INTENT
 vm-biensenbach-one  compute.v1.instance  COMPLETED
 ```
 
-Deploy code.
+#### Use Production Environment
+
+Get `.env.production.json` from 1Password Artsy Engineering vault under `Google Home (Biesenbach) Production Envs` and place it with the source. The code automatically loads it when `ENV` is set to `production` in `app.yml`.
+
+#### Deploy Code
 
 ```
 $> npm run app:deploy
@@ -73,13 +75,23 @@ To view your application in the web browser run:
   $ gcloud app browse
 ```
 
-#### Update action.json
+#### Check and Update action.json
 
-Change the `httpExecution` URL in [action.json](action.json) to `https://biesenbach-one.appspot.com`.
+Make sure to check and, if necessary, change the `httpExecution` URL in [action.json](action.json) to `https://biesenbach-one.appspot.com`. This may have been automatically updated for local preview during development to use an ngrok URL.
 
-#### Deploy Action
+#### Preview Production Action
 
-This launches the official review process to make the action available to all Google Home devices.
+Setup the preview with the production `httpExecution` fulfillment value.
+
+```
+$> npm run action:justpreview
+```
+
+Preview the deployed action using [web simulator](https://developers.google.com/actions/tools/web-simulator).
+
+#### Deploy Production Action
+
+This launches the official review process to make the action available to all Google Home devices. This is only necessary if you're changing the description of the action to advertise a new feature or such.
 
 ```
 $> npm run action:deploy
