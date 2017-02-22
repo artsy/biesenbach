@@ -36,7 +36,8 @@
     "action:preview": "ENV=development node ./scripts/preview_action.js",
     "action:config": "node ./scripts/update_action_config.js -f",
     "action:autopreview": "npm run action:config && npm run action:preview",
-    "deploy": "npm run build && gactions deploy --action_package action.json --project biesenbach"
+    "action:deploy": "gactions deploy --action_package action.json --project biesenbach-one",
+    "app:deploy": "npm run build && gcloud app deploy"
   },
   "dependencies": {
     "@manekinekko/google-actions-server": "dblock/google-actions-server#tests",
