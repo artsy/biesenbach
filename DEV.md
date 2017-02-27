@@ -13,7 +13,7 @@ Install the [Google SDK](https://developers.google.com/actions/develop/sdk/getti
 These instructions have been tested with v7.5.0.
 
 ```
-$> nvm use v7.5.0
+$> nvm use 7
 ```
 
 #### Install Dependencies
