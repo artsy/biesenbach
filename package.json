@@ -38,7 +38,8 @@
     "action:autopreview": "npm run action:config && npm run action:preview",
     "action:deploy": "gactions deploy --action_package action.json --project biesenbach-one",
     "action:justpreview": "gactions preview --action_package action.json --invocation_name 'artsy' --preview_mins 1234",
-    "app:deploy": "npm run build && gcloud app deploy"
+    "check:production.json": "test -e .env.production.json",
+    "app:deploy": "npm run build && npm run check:production.json && gcloud app deploy"
   },
   "dependencies": {
     "@manekinekko/google-actions-server": "dblock/google-actions-server#tests",
