@@ -41,13 +41,13 @@ Forwarding                    https://dc42588b.ngrok.io -> localhost:8080
 
 #### Run the server
 
-Use `npm start` to transpile the source with babel and to start the server locally.
+Use `npm run server` to transpile the source with babel and to start the server locally.
 
 ```
-$> npm start
+$> npm run server
 
 > Biesenbach@0.1.0 start /Users/dblock/source/artsy/biesenbach/dblock
-> npm run build && npm run server
+> npm run build && ENV=development nodemon dist/action.js
 
 > Biesenbach@0.1.0 build /Users/dblock/source/artsy/biesenbach/dblock
 > babel lib -d dist && babel test -d dist/test

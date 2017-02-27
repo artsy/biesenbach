@@ -2,15 +2,17 @@
   "versionLabel": "1.0.0",
   "agentInfo": {
     "languageCode": "en-US",
-    "projectId": "biesenbach",
-    "voiceName": "female_1"
+    "projectId": "biesenbach-one",
+    "invocationNames": ["artsy"],
+    "voiceName": "female_1",
+    "logoUrl": "http://lh3.googleusercontent.com/KgcabdfX7I1s3A-US7aco3OiRGAah18SU3uVOu2QY4I7KChCR1HbNolVNqHwt6iGiQ-9YRxIlCEd"
   },
   "actions": [{
     "initialTrigger": {
       "intent": "assistant.intent.action.MAIN"
     },
     "httpExecution": {
-      "url": "https://0da4db4e.ngrok.io"
+      "url": "https://biesenbach-one.appspot-preview.com"
     }
   }]
 }

@@ -26,9 +26,9 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "start": "npm run build && npm run server",
-    "server": "ENV=development nodemon dist/action.js",
+    "start": "nodemon dist/action.js",
     "ngrok": "ngrok http 8080",
+    "server": "npm run build && ENV=development nodemon dist/action.js",
     "test": "npm run build && ENV=test mocha --timeout 5000 dist/test",
     "build": "babel lib -d dist && babel test -d dist/test",
     "build:watch": "npm run build -- -w",
@@ -36,7 +36,9 @@
     "action:preview": "ENV=development node ./scripts/preview_action.js",
     "action:config": "node ./scripts/update_action_config.js -f",
     "action:autopreview": "npm run action:config && npm run action:preview",
-    "deploy": "npm run build && gactions deploy --action_package action.json --project biesenbach"
+    "action:deploy": "gactions deploy --action_package action.json --project biesenbach-one",
+    "action:justpreview": "gactions preview --action_package action.json --invocation_name 'artsy' --preview_mins 1234",
+    "app:deploy": "npm run build && gcloud app deploy"
   },
   "dependencies": {
     "@manekinekko/google-actions-server": "dblock/google-actions-server#tests",
