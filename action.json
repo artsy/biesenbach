@@ -1,18 +1,43 @@
 {
-  "versionLabel": "1.0.0",
-  "agentInfo": {
-    "languageCode": "en-US",
-    "projectId": "biesenbach-one",
-    "invocationNames": ["artsy"],
-    "voiceName": "female_1",
-    "logoUrl": "http://lh3.googleusercontent.com/KgcabdfX7I1s3A-US7aco3OiRGAah18SU3uVOu2QY4I7KChCR1HbNolVNqHwt6iGiQ-9YRxIlCEd"
-  },
-  "actions": [{
-    "initialTrigger": {
-      "intent": "assistant.intent.action.MAIN"
+  "actions": [
+    {
+      "name": "MAIN",
+      "description": "Default Welcome",
+      "fulfillment": {
+        "conversationName": "biesenbach-one"
+      },
+      "intent": {
+        "name": "actions.intent.MAIN",
+        "trigger": {
+          "queryPatterns": [
+            "talk to artsy"
+          ]
+        }
+      },
+      "fulfillment": {
+        "conversationName": "biesenbach-one"
+      }
     },
-    "httpExecution": {
+    {
+      "name": "TEXT",
+      "description": "Default Text",
+      "intent": {
+        "name": "actions.intent.TEXT",
+        "trigger": {
+          "queryPatterns": [
+            "about"
+          ]
+        }
+      },
+      "fulfillment": {
+        "conversationName": "biesenbach-one"
+      }
+    }
+  ],
+  "conversations": {
+    "biesenbach-one": {
+      "name": "biesenbach-one",
       "url": "https://biesenbach-one.appspot-preview.com"
     }
-  }]
+  }
 }
