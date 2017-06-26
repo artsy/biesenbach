@@ -2,6 +2,16 @@
 
 See [Deploy your Actions](https://developers.google.com/actions/distribute/deploy) for detailed information.
 
+#### Tools
+
+Install `gcloud` and `gactions` as described in [DEV](DEV.md).
+
+#### Login
+
+```
+gcloud auth login
+```
+
 #### Google Cloud Project
 
 Create a new project in [Google Cloud Platform Projects](https://console.cloud.google.com/iam-admin/projects).
@@ -104,4 +114,4 @@ Success: versionid 2
 Review progress information by vising the Google Cloud console: https://console.developers.google.com/apis/api/actions.googleapis.com/overview?project=biesenbach-one
 ```
 
-The new version will appear in API Manager under [Deployment History](https://console.developers.google.com/apis/api/actions.googleapis.com/deployments?project=biesenbach-one).
+The new version will appear in API Manager under [Deployment History](https://console.actions.google.com/project/biesenbach-one/overview).
