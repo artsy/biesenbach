@@ -63,6 +63,25 @@ describe('Artsy', () => {
       });
   });
 
+  it('prompts on an artist that it cannot find', () => {
+    return request(action)
+      .post('/')
+      .send({
+        inputs: [{
+          intent: 'assistant.intent.action.TEXT',
+          raw_inputs: [{
+            input_type: 2,
+            query: "about bananas"
+          }],
+          arguments: []
+        }]
+      })
+      .expect(200).then((response) => {
+        expect(response.body.expect_user_response).to.equal(true);
+        expect(response.body.expected_inputs[0].input_prompt.initial_prompts[0].ssml).to.eql(`Sorry, I couldn't find an artist bananas. Try again?`);
+      });
+  });
+
   it('talks about an artist', () => {
     return request(action)
       .post('/')
