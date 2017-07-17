@@ -36,8 +36,8 @@
     "action:preview": "ENV=development node ./scripts/preview_action.js",
     "action:config": "node ./scripts/update_action_config.js -f",
     "action:autopreview": "npm run action:config && npm run action:preview",
-    "action:deploy": "gactions deploy --action_package action.json --project biesenbach-one",
-    "action:justpreview": "gactions preview --action_package action.json --invocation_name 'artsy' --preview_mins 1234",
+    "action:deploy": "gactions update --action_package action.json --project biesenbach-one",
+    "action:justpreview": "gactions test --action_package action.json --project biesenbach-one --preview_mins 1234",
     "check:production.json": "test -e .env.production.json",
     "app:deploy": "npm run build && npm run check:production.json && gcloud app deploy"
   },

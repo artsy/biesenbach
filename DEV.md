@@ -6,7 +6,22 @@ You might want to read up on [Conversation Actions](https://developers.google.co
 
 #### Install the Google SDK
 
-Install the [Google SDK](https://developers.google.com/actions/develop/sdk/getting-started).
+Install the [Google Cloud SDK](https://cloud.google.com/sdk) and the [Google Actions SDK](https://developers.google.com/actions/develop/sdk/getting-started).
+
+##### OSX
+
+Run `brew cask install google-cloud-sdk`.
+
+Download [gactions CLI](https://developers.google.com/actions/tools/gactions-cli).
+
+```
+wget https://dl.google.com/gactions/updates/bin/darwin/amd64/gactions/gactions
+chmod 755 gactions
+mkdir /usr/local/Cellar/google-actions-sdk
+mkdir /usr/local/Cellar/google-actions-sdk/bin
+mv gactions /usr/local/Cellar/google-actions-sdk/bin
+ln -s /usr/local/Cellar/google-actions-sdk/bin/gactions /usr/local/bin
+```
 
 #### Use a Recent Version of Node
 

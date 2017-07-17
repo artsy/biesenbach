@@ -2,6 +2,16 @@
 
 See [Deploy your Actions](https://developers.google.com/actions/distribute/deploy) for detailed information.
 
+#### Tools
+
+Install `gcloud` and `gactions` as described in [DEV](DEV.md).
+
+#### Login
+
+```
+gcloud auth login
+```
+
 #### Google Cloud Project
 
 Create a new project in [Google Cloud Platform Projects](https://console.cloud.google.com/iam-admin/projects).
@@ -97,11 +107,9 @@ This launches the official review process to make the action available to all Go
 $> npm run action:deploy
 
 > Biesenbach@0.1.0 action:deploy /Users/dblock/source/artsy/biesenbach/dblock
-> gactions deploy --action_package action.json --project biesenbach-one
+> gactions update --action_package action.json --project biesenbach-one
 
-Deploying action package action.json in the biesenbach-one project...
-Success: versionid 2
-Review progress information by vising the Google Cloud console: https://console.developers.google.com/apis/api/actions.googleapis.com/overview?project=biesenbach-one
+Your app for the Assistant for project biesenbach-one was successfully updated with your actions. Visit the Actions on Google console to finish registering your app and submit it for review at https://console.actions.google.com/project/biesenbach-one/overview
 ```
 
-The new version will appear in API Manager under [Deployment History](https://console.developers.google.com/apis/api/actions.googleapis.com/deployments?project=biesenbach-one).
+Go to [console](https://console.actions.google.com/project/biesenbach-one/overview), hit "Edit" and "Submit for Review". The new version will appear in API Manager under [Deployment History](https://console.actions.google.com/project/biesenbach-one/overview).

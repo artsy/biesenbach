@@ -15,6 +15,7 @@ function updateConfig() {
 
         if (actionConfig) {
             actionConfig = actionConfig.replace(/https:\/\/[a-z0-9]+\.ngrok.io/g, public_url);
+            actionConfig = actionConfig.replace(/https:\/\/[a-z0-9\-]+\.appspot-preview.com/g, public_url);
 
             fs.writeFileSync(actionConfigFile, actionConfig, {
                 encoding: 'utf-8'
