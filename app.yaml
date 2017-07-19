@@ -2,3 +2,5 @@ env: flex
 runtime: nodejs
 env_variables:
   ENV: 'production'
+manual_scaling:
+  instances: 1
